@@ -58,7 +58,7 @@ insertOne: function(table,cols,vals,cb){
 
 updateOne: function(table, objColVals, condition, cb){
 	var queryString = "UPDATE " + table;
-	queryString += "SET";
+	queryString += " SET ";
 	queryString += objToSql(objColVals);
 	queryString += " WHERE ";
 	queryString += condition;
@@ -68,7 +68,7 @@ updateOne: function(table, objColVals, condition, cb){
 		if(err){
 			throw err;
 		}
-		cb(result);
+		cb(results);
 	});
  },
 };
